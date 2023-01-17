@@ -1,0 +1,22 @@
+<div>
+    <h2>DataBinding Demo</h2>
+    <h4>Event Binding</h4>
+    <p>Username: {{username}}</p>
+    <div>
+        <input type="text" #un (input)="handleChange(un.value)">
+        <button [disabled]="isDisabled" (click)="updateName(un.value)">Change Name</button>
+    </div>
+    <div>
+        <h3>Two way binding</h3>
+        <input [(ngModel)]='firstname'><br />
+        <input [(ngModel)]='firstname'>
+    </div>
+    <br>
+    <div [class.one]="isDisabled" [style]="myStyles">
+        <p>Is Disabled: {{isDisabled}}</p>
+    </div>
+    <br>
+    <div [style]="myStyles">Hello! there how are you</div>
+    <br>
+    <button class="btn btn-primary">My Button</button>
+</div>

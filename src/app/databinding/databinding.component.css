@@ -1,0 +1,7 @@
+.one{
+    color: red;
+    border: 6px dotted black;
+}
+table,th,td{
+    border: 2px solid black;
+}

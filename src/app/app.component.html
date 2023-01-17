@@ -1,0 +1,18 @@
+<div class="container-fluid">
+  <h2 class="text-center bg-primary">This is app component</h2>
+  <!-- interpolation - databinding -->
+  <h4 class="text-center bg-danger">Title : {{title}}</h4>
+  <!-- <app-user></app-user> -->
+  <!-- <app-databinding></app-databinding> -->
+  <!-- <app-directive-demo></app-directive-demo> -->
+  <div>
+    <p class="text-center">Parent Component Counter: {{counter}}</p>
+  </div>
+  <hr>
+  <app-item [itemName]="username" (itemCounter)="counter = $event"></app-item>
+  <div *ngFor="let user of usernameArray">
+    <hr>
+    <app-item [itemName]="user" (itemCounter)="counter = $event"></app-item>
+  </div>
+  <hr>
+</div>

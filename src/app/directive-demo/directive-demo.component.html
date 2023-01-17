@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <h2 class="text-center">Learning ngFor and ngIf</h2>
+    <button class="btn btn-primary" (click)="handleClick()">Toggle</button>
+    <div>Counter: {{counter}}</div>
+    <table *ngIf="users" class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Age</th>
+                <th>Salary</th>
+                <th>DOB</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.id}}</td>
+                <td>{{user.name | uppercase | nameFormat: user.gender}}</td>
+                <td>{{user.gender}}</td>
+                <td>{{user.age}}</td>
+                <td>{{user.salary | currency: 'INR'}}</td>
+                <td>{{user.dob| date: 'dd-MM-yyyy'}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div>{{users|json}}</div>
+</div>
+<!-- <div>
+    <div *ngIf="item1">Shows content</div>
+    <div *ngIf="item2">Dosent Show content</div>
+    <div *ngIf="item3">Dosent Show content</div>
+    <div *ngIf="item4">Shows content</div>
+    <div *ngFor="let item of items">{{item}}</div>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tr *ngFor=" let player of players">
+            <td>{{player.name}}</td>
+            <td>{{player.age}}</td>
+        </tr>
+    </table>
+</div> -->
